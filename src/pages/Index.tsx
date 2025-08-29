@@ -44,25 +44,28 @@ const Index = () => {
 
   const publications = [
     {
-      title: "Здоровый образ жизни",
-      description: "Как спорт помогает в реабилитации",
+      title: "От семян к урожаю",
+      description: "Как труд на земле помогает в реабилитации и становлении личности",
       author: "Мария С.",
       date: "15 августа 2024",
-      category: "Здоровье"
+      category: "Агротерапия",
+      icon: "Wheat"
     },
     {
-      title: "Моя история",
-      description: "Путь к новой жизни глазами участника программы",
+      title: "Зеленые ростки надежды",
+      description: "Личная история восстановления через работу в теплице",
       author: "Александр В.",
       date: "12 августа 2024",
-      category: "Истории"
+      category: "Истории",
+      icon: "Sprout"
     },
     {
-      title: "Творчество как терапия",
-      description: "Арт-терапия в процессе восстановления",
+      title: "Сад как учитель жизни",
+      description: "Уроки терпения и заботы в садоводческих мастерских",
       author: "Елена П.",
       date: "10 августа 2024",
-      category: "Творчество"
+      category: "Мастерские",
+      icon: "TreePine"
     }
   ];
 
@@ -72,9 +75,12 @@ const Index = () => {
       <header className="bg-white shadow-sm border-b">
         <div className="max-w-6xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <div>
-              <h1 className="text-2xl font-bold text-secondary">МОЛОДЕЖНЫЙ ЖУРНАЛ</h1>
-              <p className="text-muted-foreground text-sm">Республиканский центр реабилитации</p>
+            <div className="flex items-center gap-3">
+              <Icon name="Sprout" size={32} className="text-primary" />
+              <div>
+                <h1 className="text-3xl font-bold text-secondary">РОСТОК</h1>
+                <p className="text-muted-foreground text-sm">Агро-молодежный журнал • Растем вместе</p>
+              </div>
             </div>
             <nav className="flex space-x-6">
               <a href="#" className="text-card-foreground hover:text-primary transition-colors">Главная</a>
@@ -86,11 +92,32 @@ const Index = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-secondary to-primary text-white py-16">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-6">Краткая аннотация проекта</h2>
+      <section className="bg-gradient-to-br from-secondary to-primary text-white py-16 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-10 left-10">
+            <Icon name="Wheat" size={48} className="text-white" />
+          </div>
+          <div className="absolute top-20 right-20">
+            <Icon name="TreePine" size={40} className="text-white" />
+          </div>
+          <div className="absolute bottom-16 left-1/4">
+            <Icon name="Flower2" size={36} className="text-white" />
+          </div>
+          <div className="absolute bottom-10 right-16">
+            <Icon name="Sprout" size={44} className="text-white" />
+          </div>
+        </div>
+        <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <Icon name="Seedling" size={48} className="text-green-200" />
+            <h2 className="text-4xl font-bold">Проект "РОСТОК"</h2>
+            <Icon name="Leaf" size={48} className="text-green-200" />
+          </div>
           <p className="text-lg opacity-90 leading-relaxed">
-            Создание молодежного журнала силами участников программы реабилитации
+            Агро-молодежный журнал о росте, развитии и новых возможностях
+          </p>
+          <p className="text-base opacity-80 mt-2">
+            Создание журнала силами участников программы реабилитации
           </p>
         </div>
       </section>
@@ -250,10 +277,10 @@ const Index = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {publications.map((pub, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow cursor-pointer">
+              <Card key={index} className="hover:shadow-lg transition-shadow cursor-pointer border-l-4 border-l-primary">
                 <CardContent className="p-6">
                   <div className="flex items-center gap-2 mb-3">
-                    <Icon name="FileText" size={16} className="text-primary" />
+                    <Icon name={pub.icon} size={20} className="text-primary" />
                     <span className="text-xs font-medium text-primary bg-primary/10 px-2 py-1 rounded-full">
                       {pub.category}
                     </span>
@@ -273,8 +300,16 @@ const Index = () => {
 
       {/* Footer */}
       <footer className="bg-secondary text-white py-8">
-        <div className="max-w-6xl mx-auto px-4 text-center">
-          <p>&copy; 2024 Молодежный журнал. Республиканский центр реабилитации</p>
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="flex items-center justify-center gap-4 mb-4">
+            <Icon name="Sprout" size={24} className="text-green-200" />
+            <h3 className="text-xl font-bold">РОСТОК</h3>
+            <Icon name="Leaf" size={24} className="text-green-200" />
+          </div>
+          <div className="text-center">
+            <p className="mb-2">&copy; 2024 Агро-молодежный журнал "Росток"</p>
+            <p className="text-sm opacity-75">Республиканский центр реабилитации • Растем и развиваемся вместе</p>
+          </div>
         </div>
       </footer>
     </div>
