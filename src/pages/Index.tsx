@@ -105,6 +105,19 @@ const Index = () => {
                   В Республике Башкортостан в Государственном бюджетном учреждение Республиканский центр психолого-педагогической реабилитации и коррекции несовершеннолетних ежегодно проходят реабилитацию более 1000 детей, подростков и молодежи, употребляющих наркотические вещества.
                 </p>
                 
+                <div className="grid md:grid-cols-2 gap-6 my-8">
+                  <img 
+                    src="https://cdn.poehali.dev/files/ac532cae-7469-4e76-a107-64b1897b71d3.jpg" 
+                    alt="Литературная газета - пример молодежных публикаций" 
+                    className="rounded-lg shadow-md w-full h-64 object-cover"
+                  />
+                  <img 
+                    src="https://cdn.poehali.dev/files/3725076a-6ebe-4447-8e80-7d86222e4391.jpg" 
+                    alt="Групповые занятия в центре реабилитации" 
+                    className="rounded-lg shadow-md w-full h-64 object-cover"
+                  />
+                </div>
+                
                 <p className="text-card-foreground leading-relaxed mb-6">
                   Во время реабилитации для них проводятся занятия по арт-терапии, создаются квесты от лучших игротехников Республики Башкортостан, проводятся конкурсы и занятия для адаптации и облегчения периода реабилитации.
                 </p>
@@ -132,10 +145,31 @@ const Index = () => {
                 <p className="text-card-foreground leading-relaxed mb-6">
                   Ярким примером становится центр реабилитации, в котором мы ежемесячно проводим добровольческие акции и мероприятия, ведь в центре бывают ребята разных возрастов, молодые, красивые и интересные, но с трудной жизненной ситуации. Есть данные из практики, что реализация адаптационной программы с наличием арт-компонента повышает её эффективность более чем в половину.
                 </p>
+                
+                <div className="grid md:grid-cols-2 gap-6 my-8">
+                  <img 
+                    src="https://cdn.poehali.dev/files/237d8e21-bb34-426e-a719-51d89efccd21.jpg" 
+                    alt="Арт-терапия с использованием песочной анимации" 
+                    className="rounded-lg shadow-md w-full h-64 object-cover"
+                  />
+                  <img 
+                    src="https://cdn.poehali.dev/files/d3b4650b-f38a-4f5b-ae3c-e3833254fa38.jpg" 
+                    alt="Интерактивные занятия и групповые упражнения" 
+                    className="rounded-lg shadow-md w-full h-64 object-cover"
+                  />
+                </div>
 
                 <p className="text-card-foreground leading-relaxed mb-6">
                   У зависимых отмечается повышение реабилитационного потенциалах, достигается высокая степень личностной, социальной и трудовой адаптации за счёт участия и заинтересованности в итоге коллективного творчества и совместных мероприятиях. Таким образом, реализацию данного проекта с учётом участия в разных мероприятиях разработчики рассматривают как комплексную многокомпонентную антинаркотическую работу с использованием методов волонтёрства.
                 </p>
+                
+                <div className="my-8">
+                  <img 
+                    src="https://cdn.poehali.dev/files/a374240e-c3d7-4835-a055-b626f33062f9.jpg" 
+                    alt="Творческие мастерские с использованием различных материалов" 
+                    className="rounded-lg shadow-md w-full h-80 object-cover"
+                  />
+                </div>
 
                 <div className="bg-muted p-6 rounded-lg mt-8">
                   <p className="text-card-foreground font-semibold mb-4">
@@ -148,37 +182,6 @@ const Index = () => {
               </div>
             </CardContent>
           </Card>
-        </div>
-      </section>
-
-      {/* Publications Section */}
-      <section id="publications" className="py-16 bg-white">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-card-foreground mb-4">Публикации и материалы</h3>
-            <p className="text-muted-foreground">Статьи, написанные участниками программы</p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {publications.map((pub, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow cursor-pointer">
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-2 mb-3">
-                    <Icon name="FileText" size={16} className="text-primary" />
-                    <span className="text-xs font-medium text-primary bg-primary/10 px-2 py-1 rounded-full">
-                      {pub.category}
-                    </span>
-                  </div>
-                  <h4 className="font-semibold text-card-foreground mb-2">{pub.title}</h4>
-                  <p className="text-muted-foreground text-sm mb-4">{pub.description}</p>
-                  <div className="flex justify-between items-center text-xs text-muted-foreground">
-                    <span>{pub.author}</span>
-                    <span>{pub.date}</span>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -234,6 +237,37 @@ const Index = () => {
               </div>
             </CardContent>
           </Card>
+        </div>
+      </section>
+
+      {/* Publications Section */}
+      <section id="publications" className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <h3 className="text-3xl font-bold text-card-foreground mb-4">Публикации и материалы</h3>
+            <p className="text-muted-foreground">Статьи, написанные участниками программы</p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {publications.map((pub, index) => (
+              <Card key={index} className="hover:shadow-lg transition-shadow cursor-pointer">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-2 mb-3">
+                    <Icon name="FileText" size={16} className="text-primary" />
+                    <span className="text-xs font-medium text-primary bg-primary/10 px-2 py-1 rounded-full">
+                      {pub.category}
+                    </span>
+                  </div>
+                  <h4 className="font-semibold text-card-foreground mb-2">{pub.title}</h4>
+                  <p className="text-muted-foreground text-sm mb-4">{pub.description}</p>
+                  <div className="flex justify-between items-center text-xs text-muted-foreground">
+                    <span>{pub.author}</span>
+                    <span>{pub.date}</span>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
 
